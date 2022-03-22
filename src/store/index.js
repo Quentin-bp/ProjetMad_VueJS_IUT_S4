@@ -13,6 +13,7 @@ export default new Vuex.Store({
       viruses.forEach(v => state.samples.push(v));
       }
   },
+  
   actions: {
   },
   modules: {
