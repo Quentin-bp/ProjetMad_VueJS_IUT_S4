@@ -23,13 +23,20 @@
 
   export default {
     name: 'Slicer',
-    props: ['samples', 'parts'],
     data : () => {
       return {
         chosenViruses:[],
         cutFactor: 5,
         nbMutation : 10,
       }
+    },
+      computed :{
+        samples(){
+          return this.$store.state.samples
+        },
+        parts(){
+          return this.$store.state.parts
+        }
     },
     components: {
       CheckedList
