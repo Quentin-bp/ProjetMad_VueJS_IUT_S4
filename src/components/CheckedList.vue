@@ -3,8 +3,8 @@
     <table>
       <tr>
         <td>
-          <p v-for="(e,index) in parts" :key="index">
-            <input type="checkbox" :id="index" :value="index" v-model="chosenEntries" @change="$store.state.chosenViruses = $event">
+          <p v-for="(e,index) in entries" :key="index">
+            <input type="checkbox" :id="index" :value="index" v-model="chosenEntries" @change="$store.state.chosenParts = $event">
             <label for="index"><span v-for="(f,index) in fields" :key="index">{{e[f]}} </span></label>
           </p>
         </td>
@@ -17,7 +17,7 @@
 
   export default {
     name: 'CheckedList',
-    props: ['fields'],
+    props: ['fields',"entries"],
     data : () => {
       return {
         chosenEntries:[]
@@ -28,6 +28,7 @@
         return this.$store.state.samples
       },
       parts(){
+        console.log("parts checked liste", this.$store.state.parts)
         return this.$store.state.parts
       }
     }

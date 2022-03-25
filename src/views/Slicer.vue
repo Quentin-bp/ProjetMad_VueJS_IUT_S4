@@ -7,7 +7,7 @@
       </tr>
       <tr>
         <td>
-          <CheckedList :fields="['name','code']" />
+          <CheckedList :fields="['name','code']" :entries="samples"/>
         </td>
       </tr>
     </table>

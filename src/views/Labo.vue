@@ -5,7 +5,7 @@
       <tr>
         <td>
           <keep-alive include="Mixer">
-            <router-view name="locSubCentral" @store-virus="$emit('store-virus',$event)"></router-view>
+            <router-view name="locSubCentral" @store-virus="$store.commit('store-virus',$event)"></router-view>
           </keep-alive>
         </td>
       </tr>
@@ -19,17 +19,15 @@
   export default {
     name: 'Labo',
 
-    data() {
-      return{
-        chosenViruses: []
-      }
-    },
     computed : {
         samples(){
            return this.$store.state.samples;
         },
         parts(){
           return this.$store.state.parts
+        },
+        chosenViruses(){
+          return this.$store.state.chosenViruses
         }
     },
     methods: {

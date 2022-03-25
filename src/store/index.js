@@ -16,14 +16,17 @@ export default new Vuex.Store({
   },  
   mutations: {
     receiveVirus : function(state,viruses) {
+      console.log("samples : ", state.samples)
       viruses.forEach(v => state.samples.push(v));
+      
       },
       store_virus : function(state, event){
         state.collec.push(event)
       },
-      sendToLab : function() {
-        this.$store.commit('receiveVirus',this.basket)
-        this.basket.splice(0,this.basket.length)
+      sendToLab : function(state,basket) {
+        console.log("basket: ", basket)
+        this.commit('receiveVirus',basket)
+        state.basket.splice(0,basket.length)
       }
   },
 

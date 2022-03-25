@@ -7,7 +7,7 @@
         <td>{{v.name}}</td><td>{{v.code}}</td><td>{{v.mortalite}}</td>
       </tr>
     </table>
-    <button @click="sendToLab">Send to the lab</button>
+    <button @click="$store.commit('sendToLab',basket)">Send to the lab</button>
   </div>
 </template>
 
@@ -21,13 +21,6 @@
     computed:{
       basket(){
         return this.$store.state.basket
-      }
-    },
-    methods: {
-      sendToLab : function() {
-        this.$store.commit('receiveVirus',this.basket)
-        this.basket.splice(0,this.basket.length)
-        console.log(this.basket)
       }
     },
     watch: {
