@@ -5,7 +5,7 @@
       <tr>
         <td>
           <keep-alive include="Mixer">
-            <router-view name="locSubCentral" @store-virus="$store.commit('store-virus',$event)"></router-view>
+            <router-view name="locSubCentral" @store-virus="$store.commit('store_virus',$event)"></router-view>
           </keep-alive>
         </td>
       </tr>

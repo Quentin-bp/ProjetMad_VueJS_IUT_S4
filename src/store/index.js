@@ -8,8 +8,6 @@ export default new Vuex.Store({
   state: {
     samples : [],
     parts : [],
-    chosenParts:[],
-    chosenViruses:[],
     collec : viruses,
     basket: [],
 
