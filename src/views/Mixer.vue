@@ -64,8 +64,8 @@
         // unselect all
         this.chosenParts.splice(0,this.chosenParts.length)
       },
-      sendToLibrary : function() {
-        this.$emit('store-virus',this.newVirus);
+      sendToLibrary : function($event) {
+        this.$store.commit('store_virus',$event)
         this.newVirus = null;
       }
     }

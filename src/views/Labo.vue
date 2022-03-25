@@ -5,7 +5,7 @@
       <tr>
         <td>
           <keep-alive include="Mixer">
-            <router-view name="locSubCentral" @store-virus="$store.commit('store_virus',$event)"></router-view>
+            <router-view name="locSubCentral"></router-view>
           </keep-alive>
         </td>
       </tr>
@@ -26,9 +26,6 @@
         parts(){
           return this.$store.state.parts
         },
-        chosenViruses(){
-          return this.$store.state.chosenViruses
-        }
     },
     methods: {
       cut : function() {
