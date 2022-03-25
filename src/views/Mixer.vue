@@ -6,7 +6,7 @@
       </tr>
       <tr>
         <td>
-          <CheckedList :fields="['code']" :entries="parts" @chosen-changed="chosenParts = $event" />
+          <CheckedList :fields="['code']" @chosen-changed="chosenParts = $event" />
         </td>
       </tr>
     </table>
@@ -47,7 +47,6 @@
     methods: {
       mix : function() {
         let newCode="";
-
         let chosen = [...this.chosenParts]; // real copy so that we can splice on the copy
         let nb = chosen.length;
         for(let i=0;i<nb;i++) {
