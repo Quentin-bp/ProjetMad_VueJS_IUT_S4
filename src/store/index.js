@@ -18,8 +18,8 @@ export default new Vuex.Store({
       viruses.forEach(v => state.samples.push(v));
       
       },
-      store_virus : function(state, event){
-        state.collec.push(event)
+      store_virus : function(state,virus){
+        state.collec.push(virus)
       },
       sendToLab : function(state,basket) {
         console.log("basket: ", basket)

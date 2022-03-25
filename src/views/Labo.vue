@@ -14,8 +14,6 @@
 </template>
 
 <script>
-  import {Virus, viruses} from '../model.js'
-
   export default {
     name: 'Labo',
 
@@ -58,26 +56,6 @@
           }
         });
       },
-      mix : function() {
-        let newCode="";
-
-        let chosen = [...this.chosenParts]; // real copy so that we can splice on the copy
-        let nb = chosen.length;
-        for(let i=0;i<nb;i++) {
-          // choose randomly a part among the selected ones
-          let idx = Math.floor(Math.random() * chosen.length);
-          let p = this.parts[chosen[idx]];
-          newCode = newCode+p.code;
-          chosen.splice(idx,1);
-        }
-        this.newVirus = new Virus(viruses.length,'mixedvirus',newCode);
-        // remove chosen parts
-        for(let i=this.chosenParts.length-1;i>=0;i--) {
-          this.parts.splice(this.chosenParts[i],1);
-        }
-        // unselect all
-        this.chosenParts.splice(0,this.chosenParts.length)
-      }
     }
   }
 </script>

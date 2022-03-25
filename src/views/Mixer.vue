@@ -48,6 +48,7 @@
       mix : function() {
         let newCode="";
         let chosen = [...this.chosenParts]; // real copy so that we can splice on the copy
+        console.log(chosen)
         let nb = chosen.length;
         for(let i=0;i<nb;i++) {
           // choose randomly a part among the selected ones
@@ -64,8 +65,8 @@
         // unselect all
         this.chosenParts.splice(0,this.chosenParts.length)
       },
-      sendToLibrary : function($event) {
-        this.$store.commit('store_virus',$event)
+      sendToLibrary : function() {
+        this.$store.commit('store_virus',this.newVirus)
         this.newVirus = null;
       }
     }
