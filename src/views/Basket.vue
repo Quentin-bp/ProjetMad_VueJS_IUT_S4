@@ -18,15 +18,16 @@
   export default {
     name: 'Basket',
     props: ['operation','name','code'],
-    data : () => {
-      return {
-        basket: []
+    computed:{
+      basket(){
+        return this.$store.state.basket
       }
     },
     methods: {
       sendToLab : function() {
         this.$store.commit('receiveVirus',this.basket)
         this.basket.splice(0,this.basket.length)
+        console.log(this.basket)
       }
     },
     watch: {

@@ -7,7 +7,7 @@
       </tr>
       <tr>
         <td>
-          <CheckedList :fields="['name','code']" @chosen-changed="chosenViruses = $event" />
+          <CheckedList :fields="['name','code']" />
         </td>
       </tr>
     </table>
@@ -25,7 +25,6 @@
     name: 'Slicer',
     data : () => {
       return {
-        chosenViruses:[],
         cutFactor: 5,
         nbMutation : 10,
       }
@@ -36,6 +35,9 @@
         },
         parts(){
           return this.$store.state.parts
+        },
+        chosenViruses(){
+          return this.$store.state.chosenViruses
         }
     },
     components: {

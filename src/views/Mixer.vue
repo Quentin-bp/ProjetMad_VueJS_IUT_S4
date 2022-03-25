@@ -31,7 +31,6 @@
     name: 'Mixer',
     data : () => {
       return {
-        chosenParts:[],
         newVirus : null
       }
     },
@@ -39,6 +38,9 @@
     computed :{
         parts(){
           return this.$store.state.parts
+        },
+        chosenParts(){
+          return this.$store.state.chosenParts
         }
     },
     components: {

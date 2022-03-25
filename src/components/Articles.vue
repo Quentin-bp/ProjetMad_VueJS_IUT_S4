@@ -11,7 +11,11 @@
 
   export default {
     name: 'Articles',
-    props: ['collec']
+    computed: {
+      collec(){
+        return this.$store.state.collec
+      },
+    },
   }
 </script>
 

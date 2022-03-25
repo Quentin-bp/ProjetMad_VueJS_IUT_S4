@@ -3,8 +3,8 @@
     <table>
       <tr>
         <td>
-          <p v-for="(e,index) in samples" :key="index">
-            <input type="checkbox" :id="index" :value="index" v-model="chosenEntries" @change="$emit('chosen-changed',chosenEntries)">
+          <p v-for="(e,index) in parts" :key="index">
+            <input type="checkbox" :id="index" :value="index" v-model="chosenEntries" @change="$store.state.chosenViruses = $event">
             <label for="index"><span v-for="(f,index) in fields" :key="index">{{e[f]}} </span></label>
           </p>
         </td>
@@ -26,6 +26,9 @@
     computed :{
       samples(){
         return this.$store.state.samples
+      },
+      parts(){
+        return this.$store.state.parts
       }
     }
   }
