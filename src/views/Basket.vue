@@ -7,7 +7,7 @@
         <td>{{v.name}}</td><td>{{v.code}}</td><td>{{v.mortalite}}</td>
       </tr>
     </table>
-    <button @click="$store.commit('sendToLab',basket)">Send to the lab</button>
+    <v-btn @click="$store.commit('sendToLab',basket)">Send to the lab</v-btn>
   </div>
 </template>
 

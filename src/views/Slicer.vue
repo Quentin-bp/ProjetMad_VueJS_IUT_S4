@@ -11,10 +11,10 @@
         </td>
       </tr>
     </table>
-    <label for="cut">part length: </label><input id="cut" v-model.number="cutFactor"><button :disabled="chosenViruses.length==0" @click="$store.commit('cut')">Cut</button>
-    <label for="mute">nb mutations: </label><input id="mute" v-model.number="nbMutation"><button :disabled="chosenViruses.length==0" @click="$store.commit('mutation')">Mutation</button>
+    <label for="cut">part length: </label><input id="cut" v-model.number="cutFactor"><v-btn :disabled="chosenViruses.length==0" @click="$store.commit('cut')">Cut</v-btn>
+    <label for="mute">nb mutations: </label><input id="mute" v-model.number="nbMutation"><v-btn :disabled="chosenViruses.length==0" @click="$store.commit('mutation')">Mutation</v-btn>
     <hr/>
-    <button @click="$router.push({path:'/labo/mix'})">Go to mixer</button>
+    <v-btn @click="$router.push({path:'/labo/mix'})">Go to mixer</v-btn>
   </div>
 </template>
 

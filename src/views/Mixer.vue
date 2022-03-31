@@ -10,14 +10,14 @@
         </td>
       </tr>
     </table>
-    <button :disabled="chosenParts.length==0" @click="$store.commit('mix')">Mixing</button>
+    <v-btn :disabled="chosenParts.length==0" @click="$store.commit('mix')">Mixing</v-btn>
 
     <hr/>
-    <button @click="$router.push({path:'/labo/slice'})">Go to slicer</button>
+    <v-btn @click="$router.push({path:'/labo/slice'})">Go to slicer</v-btn>
 
     <hr/>
     <p v-if="newVirus != null">New virus: <input v-model="newVirus.name"> {{newVirus.code}} {{newVirus.mortalite}}
-    <button @click="$store.commit('sendToLibrary')">Send to library</button>
+    <v-btn @click="$store.commit('sendToLibrary')">Send to library</v-btn>
     </p>
 
   </div>
