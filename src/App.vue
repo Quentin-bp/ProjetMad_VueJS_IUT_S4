@@ -12,10 +12,13 @@
 
   export default {
     name: 'App',
-    data : () => {
-      return {
-        titles : [ { text: "Home", color:"black", path:"/home"}, { text: "Lab", color:"blue", path:"/labo/slice"}, { text: "Library", color:"red", path:"/library/view"} ],
-        currentMenu : 0,
+
+    computed : {
+      titles(){
+        return this.$store.state.titles
+      },
+      currentMenu(){
+        return this.$store.state.currentMenu
       }
     },
     components: {
