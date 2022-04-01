@@ -1,18 +1,34 @@
 <template>
-  <div>
-    <h1>Home</h1>
-    <p> Welcome to Dr Mad P4 laboratory. Here you can create the most monstruous viruses ever known</p>
-    <p>Go to the Library to browse the collection of Dr Mad</p>
-    <p>Go to the Lab to imagine new viruses</p>
+  <v-card>
+      <v-card-text>Entrée</v-card-text>
+      
+      <v-card-text>
+        <p>
+          Bienvenue dans le laboratoire abandonné d'Artemis, la déesse qui peut
+          engendrer des épidémies
+        </p>
 
-  </div>
+        <p>
+          Si tu veux récuperer son travail et analyser les virus déjà découvert,
+          regarde dans la librairie
+        </p>
+
+        <p>
+          Pour te tenir sur un pied d'égalité avec elle, on te donne également
+          le pouvoir de créer tes propres virus, vas voir dans le laboratoire !
+        </p>
+      </v-card-text>
+  </v-card>
 </template>
 
 <script>
 export default {
-  name: 'Home'
-}
-</script>
+  name: "Home",
 
-<style scoped>
-</style>
+  computed : {
+    devanture(){
+      return this.$store.state.devanture
+    }
+  }
+};
+</script>

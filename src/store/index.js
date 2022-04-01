@@ -6,6 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    devanture:'../assets/devanture.png',
+    //data :
     titles : [ { text: "Home", color:"black", path:"/home"}, { text: "Lab", color:"blue", path:"/labo/slice"}, { text: "Library", color:"red", path:"/library/view"} ],
     currentMenu : 0,
     

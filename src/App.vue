@@ -19,6 +19,9 @@ import NavBar from './components/NavBar.vue'
       },
       currentMenu(){
         return this.$store.state.currentMenu
+      },
+      actualPicture(){
+        return this.$store.state.actualPicture
       }
     },
     components: {
@@ -36,4 +39,5 @@ import NavBar from './components/NavBar.vue'
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1>Library</h1>
+  <v-card>
+      <v-card-title>Library</v-card-title>
       <Articles></Articles>
       <router-view name="locDown"></router-view>
-  </div>
+  </v-card>
 </template>
 
 <script>
