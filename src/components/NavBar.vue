@@ -1,9 +1,10 @@
 <template>
     <v-container>
-      <v-row>
-        <v-col>
+      <v-row justify="center">
+        <v-col align="center">
           <v-btn
-              color="secondary"
+              class="mx-1"
+              color="#42f595"
               x-large
               v-for="(t,index) in titles" :key="index" :style="{color : t.color}" @click="$router.push({path:t.path})">
             {{t.text}}

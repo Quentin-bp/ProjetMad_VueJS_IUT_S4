@@ -1,24 +1,23 @@
 <template>
-  <v-card>
-      <v-card-text>Entrée</v-card-text>
-      
-      <v-card-text>
-        <p>
-          Bienvenue dans le laboratoire abandonné d'Artemis, la déesse qui peut
-          engendrer des épidémies
-        </p>
+  <v-parallax  :src= "require('../assets/devanture.png')"  >
 
-        <p>
-          Si tu veux récuperer son travail et analyser les virus déjà découvert,
-          regarde dans la librairie
-        </p>
+    <v-card max-width="800" class="mx-auto my-auto" outlined color="rgb(0, 0, 0, 0.5)">
+      <v-card-title class="justify-center ma-0 white--text text-h2">
+        <div>
 
-        <p>
-          Pour te tenir sur un pied d'égalité avec elle, on te donne également
-          le pouvoir de créer tes propres virus, vas voir dans le laboratoire !
-        </p>
+          <h3 class="headline pink--text text--accent-2">
+            <v-icon large>mdi-home</v-icon>
+            Home
+          </h3>
+        </div>
+      </v-card-title>
+      <v-card-text class="font-weight-bold text-h5 text-center">
+        Welcome to Dr Mad P4 laboratory. Here you can create the most monstruous viruses ever known
+        Go to the Library to browse the collection of Dr Mad
+        Go to the Lab to imagine new viruses
       </v-card-text>
-  </v-card>
+    </v-card>
+  </v-parallax>
 </template>
 
 <script>
@@ -27,7 +26,10 @@ export default {
 
   computed : {
     devanture(){
-      return this.$store.state.devanture
+      console.log("HEY" + this.$store.state.devanture)
+      return{
+        Devanture: require(this.$store.state.devanture)
+      }
     }
   }
 };
