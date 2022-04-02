@@ -1,13 +1,35 @@
 <template>
   <div>
-    <h2>In my basket :</h2>
-    <table >
-      <tr><td>Name</td><td>Code</td><td>% Mortality</td></tr>
-      <tr v-for="(v,index) in basket" :key="index">
-        <td>{{v.name}}</td><td>{{v.code}}</td><td>{{v.mortalite}}</td>
-      </tr>
-    </table>
-    <v-btn class="justify-center" @click="$store.commit('sendToLab',basket)">Send to the lab</v-btn>
+    <v-card style="width: 800px;" class="justify-center">
+        <v-card-title class="justify-center ma-0 white--text text-h2">
+            <h3 class=" headline text--accent-2 font-weight-bold text-center"  style="background-color: #1e1e1e; opacity: 0.7; width: 200px"  >
+              Panier
+            </h3>
+        </v-card-title>
+       <v-data-table
+      :headers="[
+        { text: 'Nom' },
+        { text: 'Code' },
+        { text: '% Mortalité' },
+      ]"
+      :items="basket"
+      :items-per-page="10"
+      class="elevation-1"
+    >
+      <template #item="{ item }">
+        <tr style="color: rgba(255, 255, 255, 0.7)">
+          <td>{{ item.name }}</td>
+          <td>{{ item.code }}</td>
+          <td>
+            <v-chip color="red">{{ item.mortalite }} %</v-chip>
+          </td>
+            </tr>
+      </template>
+    </v-data-table>
+    <div style="align-items: center">
+        <v-btn right @click="$store.commit('sendToLab',basket)">Send to the lab</v-btn>
+    </div>
+    </v-card>
   </div>
 </template>
 

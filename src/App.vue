@@ -1,9 +1,11 @@
 <template>
   <v-app>
     <NavBar :titles="titles" />
+    <v-img :src="require('./assets/devanture.png')" class="justify-center">
     <keep-alive>
       <router-view name="locCentral"></router-view>
     </keep-alive>
+    </v-img>
   </v-app>
 </template>
 

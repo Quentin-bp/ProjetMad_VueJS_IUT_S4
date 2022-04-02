@@ -11,7 +11,7 @@
           </div>
         </v-card-title>
         <v-card class="text-h2" style="max-width: 800px; opacity: 0.9">
-          <v-card-text class="font-weight-bold text-h5 text-center justify-center" >
+          <v-card-text class="font-weight-bold text-center justify-center" >
             <Articles />
             </v-card-text>
         </v-card>
@@ -19,10 +19,10 @@
         </v-container>
       <v-container style="display: grid; justify-content: center">
         <v-card style="max-width: 800px; opacity: 0.9">
-      <router-view name="locDown"></router-view>
+          <router-view name="locDown"></router-view>
          </v-card>
       </v-container>
-      
+
     </v-img>
   </v-card>
 </template>
