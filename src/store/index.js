@@ -99,6 +99,16 @@ export default new Vuex.Store({
         this.state.chosenParts.splice(0,this.state.chosenParts.length)
       },
 
+
+      removeFromBasket: function(state,item){
+        for (let i=0; i<state.basket.length; i++) {
+          if (state.basket[i] == item){
+            state.basket.splice(i, 1);
+            break;
+          }
+        }
+      }
+
   },
 
   actions: {

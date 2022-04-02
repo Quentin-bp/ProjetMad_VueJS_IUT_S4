@@ -8,9 +8,10 @@
         </v-card-title>
        <v-data-table
       :headers="[
-        { text: 'Nom' },
-        { text: 'Code' },
-        { text: '% Mortalité' },
+        { text: 'Nom', value: 'name'},
+        { text: 'Code', value: 'code', sortable: false},
+        { text: '% Mortalité', value:'mortalite'},
+        { text: 'Retirer du panier' },
       ]"
       :items="basket"
       :items-per-page="10"
@@ -23,11 +24,13 @@
           <td>
             <v-chip color="red">{{ item.mortalite }} %</v-chip>
           </td>
+          <td> <v-btn @click="$store.commit('removeFromBasket',item)"> Retirer </v-btn></td>
             </tr>
       </template>
     </v-data-table>
-    <div style="align-items: center">
-        <v-btn right @click="$store.commit('sendToLab',basket)">Send to the lab</v-btn>
+    <div>
+      
+        <v-btn style=' margin-top: 30px; float:right' @click="$store.commit('sendToLab',basket)">Envoyer au laboratoire</v-btn>
     </div>
     </v-card>
   </div>

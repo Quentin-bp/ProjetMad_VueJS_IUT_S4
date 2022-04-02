@@ -2,9 +2,9 @@
   <div>
     <v-data-table
       :headers="[
-        { text: 'Nom' },
-        { text: 'Code' },
-        { text: '%Mortalité' },
+        { text: 'Nom', value: 'name'},
+        { text: 'Code', value: 'code', sortable: false},
+        { text: '% Mortalité', value:'mortalite'},
         { text: 'Dupliquer le virus dans le laboratoire' },
       ]"
       :items="collec"
