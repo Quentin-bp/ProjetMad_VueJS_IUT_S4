@@ -2,7 +2,7 @@
   <div>
     <table border="0">
       <tr>
-        <td><h1>Parts</h1></td>
+        <td><h1 style="color:mediumorchid"> Morceaux de virus </h1></td>
       </tr>
       <tr>
         <td>
@@ -10,14 +10,15 @@
         </td>
       </tr>
     </table>
-    <v-btn :disabled="chosenParts.length==0" @click="$store.commit('mix')">Mixing</v-btn>
+    <v-btn :disabled="chosenParts.length==0" @click="$store.commit('mix')">Mixer</v-btn>
 
     <hr/>
-    <v-btn @click="$router.push({path:'/labo/slice'})">Go to slicer</v-btn>
+    <br>
+    <v-btn @click="$router.push({path:'/labo/slice'})">Aller vers la Trancheuse d'Artémis</v-btn>
 
     <hr/>
-    <p v-if="newVirus != null">New virus: <input v-model="newVirus.name"> {{newVirus.code}} {{newVirus.mortalite}}
-    <v-btn @click="$store.commit('sendToLibrary')">Send to library</v-btn>
+    <p v-if="newVirus != null"> <br> Nouveau virus : <input  style="color: magenta" v-model="newVirus.name"> <br><br>Code : {{newVirus.code}} <br> Taux de mortalité : {{newVirus.mortalite}} %<br><br>
+    <v-btn @click="$store.commit('sendToLibrary')">Envoyer à la librairie</v-btn>
     </p>
 
   </div>
